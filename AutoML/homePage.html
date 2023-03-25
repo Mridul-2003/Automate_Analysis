@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Welcome Page</title>
+    <style>
+      /* CSS styles for the page */
+      body {
+        background-color: #F7F7F7;
+        font-family: Arial, sans-serif;
+      }
+
+      #container {
+        max-width: 97vw;
+        margin-top: 5rem;
+        height: 60vh;
+        padding: 40px;
+        box-shadow:12px 20px 5px rgb(13 14 10 / 10%);
+        border: 3px solid rgb(57, 154, 193);
+        
+        /* transition: transform 0.3s ease; */
+        background: linear-gradient(114.96deg,#823ddc 34.12%,rgb(12, 230, 158) 105.4%);
+      }
+
+       #image:hover {
+        transform: translateY(-20px);
+      } 
+
+      h1 {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-left: -50rem;
+        color: #333333;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      p {
+        font-size: 1.7rem;
+        font-family: cursive;
+        text-align: center;
+        margin-left: -47rem;
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+      ::-webkit-scrollbar{
+        display: none;
+      }
+
+      button {
+        display: block;
+        margin: 0 auto;
+        font-size: 1.2rem;
+        margin-top: 4rem;
+        padding: 10px 20px;
+        margin-left: 5rem;
+        background-color:rgb(222, 131, 20);
+        color: #FFFFFF;
+        border: none;
+        border-radius: 5rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color:rgb(245, 199, 113);
+      }
+      .analysis{
+            margin-left: 60rem;
+            margin-top: -22rem; 
+            border-radius: 5px;
+            z-index: +1;
+            box-shadow: 7px 7px 2px rgba(0, 0, 0, 0.1);
+        } 
+      .data{
+            margin-left: 50rem;
+            /* margin-bottom: rem; */
+            margin-top: -5rem;
+            border-radius: .7rem;
+            box-shadow: 7px 7px 2px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Welcome to Our Website</h1>
+      <p>Our advanced software will help you make sense of<br>
+         your data quickly and easily. With powerful <br>
+         algorithms and customizable dashboards, you'll<br>
+         be able to see patterns and insights that<br>
+         you never knew existed.</p>
+      <button onclick="location.href='#'">Get Started</button>
+      <div id="image">
+        <img class="analysis" src="data analysis.jpg"  width="250" height="300">
+        <img  class="data" src="data_model.jpg"  width="300" height="300">
+      </div>
+
+    </div>
+<!-- 
+    <script>
+      // JavaScript for the page
+      console.log('Welcome to our website!');
+
+      // Animate the container on scroll
+      const container = document.querySelector('#container');
+      window.addEventListener('scroll', () => {
+        const containerTop = container.getBoundingClientRect().top;
+        const containerBottom = container.getBoundingClientRect().bottom;
+        const viewportHeight = window.innerHeight;
+        if (containerTop < viewportHeight && containerBottom > 0) {
+          container.style.opacity = 1;
+          container.style.transform = 'translateY(0)';
+        } else {
+          container.style.opacity = 0;
+          container.style.transform = 'translateY(20px)';
+        }
+      });
+    </script> -->
+  </body>
+</html>
