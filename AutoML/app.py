@@ -1,6 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
-
+from activities.activity import ml
+from ml.mlmodel import MLDataset
 import plotly.express as px
 import pandas as pd
 import pandas_profiling
@@ -16,7 +17,7 @@ def main():
     from PIL import Image
     st.sidebar.image('logo.png', use_column_width=True)
     image_loan=Image.open("data analysis.jpg")
-    rad = st.sidebar.radio("Navigation",["Home","Analysis","Visualize"])
+    rad = st.sidebar.radio("Navigation",["Home","Analysis","Visualize","Machine-Learning"])
     # if rad=="Home":
     #     HtmlFile = open("style.css", 'r', encoding='utf-8')
     #     source_code = HtmlFile.read() 
@@ -34,6 +35,7 @@ def main():
          algorithms and customizable dashboards, you'll<br>
          be able to see patterns and insights that<br>
          you never knew existed.</p>
+         
         </div>
         """
         st.markdown(html_temp,unsafe_allow_html=True)
@@ -46,14 +48,14 @@ def main():
         )
         html_temp = """
         <div style="background-color:red;padding:10px">
-        <h2 style="color:white;text-align:center;">Automatic Machine Learning </h2>
+        <h2 style="color:white;text-align:center;border-radius:30px">Automatic Exploratory Analysis</h2>
         </div>
         """
         st.markdown(html_temp,unsafe_allow_html=True)
         st.sidebar.title("Upload Input csv file : ")
         st.subheader('1.Datasets')
         st.write("""
-    # Automated Machine Learning
+    # Automatic Exploratory Analysis
     """)
 
 
@@ -95,14 +97,14 @@ def main():
         st.sidebar.image(image_loan,use_column_width=True) 
         html_temp = """
         <div style="background-color:red;padding:10px">
-        <h2 style="color:white;text-align:center;">Automatic Machine Learning </h2>
+        <h2 style="color:white;text-align:center;">Automatic Exploratory Analysis </h2>
         </div>
         """
         st.markdown(html_temp,unsafe_allow_html=True)
         st.sidebar.title("Upload Input csv file : ")
         st.subheader('1.Datasets')
         st.write("""
-    # Automated Machine Learning
+    # Automated Exploratory Analysis
     """)
 
 
@@ -140,7 +142,31 @@ def main():
                 df1 = df.dropna()
                 data = df1.to_csv("new.csv")
                 st.write(df1)
+    if rad == "Machine-Learning":
+            file_upload=st.sidebar.file_uploader(" ",type=["csv"])
+            dataset_name = st.selectbox("Pick a dataset", ["Iris", "Breast Cancer", "Wine Quality", "Mnist Digits", "Boston Houses", 'Diabetes'])
+            dataset = MLDataset(dataset_name)
+            df = dataset.get_dataframe()  
+
+            ml(df)
+            
+            
                 
+                
+                
+            
+                
+
+                
+                
+
+                
+              
+                        
+                    
+                    
+                        
+                            
 
 
 
