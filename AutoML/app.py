@@ -10,12 +10,11 @@ from streamlit_pandas_profiling import st_profile_report
 from streamlit_option_menu import option_menu
 
 
+
 def main():
-    
      #Sidebar
     from PIL import Image
-    st.sidebar.image('logo.png', use_column_width=True)
-    image_loan=Image.open("data analysis.jpg")
+    image_loan=Image.open("ml4.jpg")
     rad = st.sidebar.radio("Navigation",["Home","Analysis","Visualize"])
     # if rad=="Home":
     #     HtmlFile = open("style.css", 'r', encoding='utf-8')
@@ -25,15 +24,10 @@ def main():
 
     with open('style.css') as f:
         st.markdown(f'<style>{f.read()}</stle>',unsafe_allow_html=True)
-    if rad=='Home':
         html_temp = """
-        <div          id="container">
-        <h1>Welcome to Our Website</h1>
-        <p>Our advanced software will help you make sense<br>
-         of your data quickly and easily. With powerful <br>
-         algorithms and customizable dashboards, you'll<br>
-         be able to see patterns and insights that<br>
-         you never knew existed.</p>
+        <div style="background-color:red;padding:10px">
+        <h2 style="color:white;text-align:center;">Automatic Machine Learning </h2>
+        <img src=""
         </div>
         """
         st.markdown(html_temp,unsafe_allow_html=True)
