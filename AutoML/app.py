@@ -1,12 +1,12 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
+
 import pandas as pd
-import pandas_profiling
+
 
 from sklearn.datasets import load_diabetes
 from streamlit_pandas_profiling import st_profile_report
-from streamlit_chat import message
 from streamlit_option_menu import option_menu
 
 
@@ -16,10 +16,21 @@ def main():
     from PIL import Image
     image_loan=Image.open("ml4.jpg")
     rad = st.sidebar.radio("Navigation",["Home","Analysis","Visualize"])
-    if rad=="Home":
-        HtmlFile = open("homePage.html", 'r', encoding='utf-8')
-        source_code = HtmlFile.read() 
-        components.html(source_code)
+    # if rad=="Home":
+    #     HtmlFile = open("style.css", 'r', encoding='utf-8')
+    #     source_code = HtmlFile.read() 
+    #     components.html(source_code,width=900, height=700)
+    #     # print(source_code)
+
+    with open('style.css') as f:
+        st.markdown(f'<style>{f.read()}</stle>',unsafe_allow_html=True)
+        html_temp = """
+        <div style="background-color:red;padding:10px">
+        <h2 style="color:white;text-align:center;">Automatic Machine Learning </h2>
+        <img src=""
+        </div>
+        """
+        st.markdown(html_temp,unsafe_allow_html=True)
     if rad == "Analysis":
          
         file_upload=st.sidebar.file_uploader(" ",type=["csv"])
