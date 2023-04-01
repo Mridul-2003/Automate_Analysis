@@ -15,7 +15,7 @@ def main():
     
      #Sidebar
     from PIL import Image
-    st.sidebar.image('', use_column_width=True)
+    
     image_loan=Image.open("data analysis.jpg")
     rad = st.sidebar.radio("Navigation",["Home","Analysis","Visualize","Machine-Learning"])
     # if rad=="Home":
