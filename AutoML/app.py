@@ -5,7 +5,7 @@ from ml.mlmodel import MLDataset
 import plotly.express as px
 import pandas as pd
 import pandas_profiling
-
+import os
 from sklearn.datasets import load_diabetes
 from streamlit_pandas_profiling import st_profile_report
 from streamlit_option_menu import option_menu
@@ -16,7 +16,7 @@ def main():
      #Sidebar
     from PIL import Image
     st.sidebar.image('logo.png', use_column_width=True)
-    image_loan=Image.open("data analysis.jpg")
+    image_loan=Image.open(os.path.join("data analysis.jpg"))
     rad = st.sidebar.radio("Navigation",["Home","Analysis","Visualize","Machine-Learning"])
     # if rad=="Home":
     #     HtmlFile = open("style.css", 'r', encoding='utf-8')
