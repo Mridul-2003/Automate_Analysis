@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
 import pandas as pd
 import pandas_profiling
@@ -15,7 +16,10 @@ def main():
     from PIL import Image
     image_loan=Image.open("ml4.jpg")
     rad = st.sidebar.radio("Navigation",["Home","Analysis","Visualize"])
-
+    if rad=="Home":
+        HtmlFile = open("homePage.html", 'r', encoding='utf-8')
+        source_code = HtmlFile.read() 
+        components.html(source_code)
     if rad == "Analysis":
          
         file_upload=st.sidebar.file_uploader(" ",type=["csv"])
