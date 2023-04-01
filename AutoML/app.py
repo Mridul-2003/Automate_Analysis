@@ -3,6 +3,7 @@ import streamlit.components.v1 as components
 
 import plotly.express as px
 import pandas as pd
+import pandas_profiling
 
 from sklearn.datasets import load_diabetes
 from streamlit_pandas_profiling import st_profile_report
@@ -72,6 +73,20 @@ def main():
                 y_values = st.sidebar.selectbox('Y axis',options=numeric_columns)
                 plot = px.line(data_frame =df, x=x_values,y=y_values)
                 st.plotly_chart(plot)
+            if chart_select=="Histogram":
+                st.sidebar.subheader("ScatterPlot Settings")
+                x_values = st.sidebar.selectbox('X axis',options=numeric_columns)
+                y_values = st.sidebar.selectbox('Y axis',options=numeric_columns)
+                plot=px.histogram(data_frame=df,x=x_values,y=y_values)
+                st.plotly_chart(plot)
+
+            if chart_select=="Boxplot":
+                st.sidebar.subheader("ScatterPlot Settings")
+                x_values = st.sidebar.selectbox('X axis',options=numeric_columns)
+                y_values = st.sidebar.selectbox('Y axis',options=numeric_columns)
+                plot=px.box(data_frame=df,x=x_values,y=y_values)
+                st.plotly_chart(plot)
+            
         else:
             st.info('Awaiting for CSV file to be uploaded.')
     if rad == "Analysis":
