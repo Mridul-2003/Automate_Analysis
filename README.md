@@ -6,4 +6,6 @@ https://user-images.githubusercontent.com/110475111/229319991-fce6cda9-129b-4d0a
 
 to start app:
 pip install -r requirements.txt
+
+to run app:
 streamlit run app.py
