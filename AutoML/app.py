@@ -1,9 +1,8 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-
+import plotly.express as px
 import pandas as pd
-
 
 from sklearn.datasets import load_diabetes
 from streamlit_pandas_profiling import st_profile_report
